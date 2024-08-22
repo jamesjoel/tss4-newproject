@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
     let [allCity, setAllCity] = useState([]);
@@ -13,11 +14,18 @@ const Home = () => {
 
 
     return (
+        
+
+
         <div className="gtco-section">
+
+            {/* <a href='/about/hello'>About</a> */}
+
+
             <div className="gtco-container">
                 <div className="row">
                     <div className="col-md-8 col-md-offset-2 text-center gtco-heading">
-                        <h2>Most Popular Destination</h2>
+                        <h2>Most Popular Cities</h2>
                         <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
@@ -27,17 +35,17 @@ const Home = () => {
                         allCity.map(item => {
                             return(
                             <div className="col-lg-4 col-md-4 col-sm-6">
-                                <a href="images/img_1.jpg" className="fh5co-card-item image-popup">
+                                <div  className="fh5co-card-item image-popup">
                                     <figure>
                                         <div className="overlay"><i className="ti-plus"></i></div>
-                                        <img src={item.image} alt="Image" className="img-responsive" />
+                                        <img src={item.image} alt="Image" style={{height : "250px"}} className="img-responsive" />
                                     </figure>
                                     <div className="fh5co-text">
                                         <h2>{item.name}</h2>
                                         
-                                        <p><span className="btn btn-primary">Schedule a Trip</span></p>
+                                        <p><NavLink to={"/destination/"+item.name} className="btn btn-primary">View Detail</NavLink></p>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             )
                         })

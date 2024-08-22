@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -13,7 +14,7 @@ const NavBar = () => {
               </div>
               <div className="col-xs-8 text-right menu-1">
                 <ul>
-                  <li><a href="destination.html">Destination</a></li>
+                  <li><NavLink to="/">Destination</NavLink></li>
                   <li className="has-dropdown">
                     <a href="#">Travel</a>
                     <ul className="dropdown">
